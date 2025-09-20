@@ -14,6 +14,10 @@ export default function Welcome() {
     navigation.navigate("notes" as never);
   };
 
+  const handleGoToChat = () => {
+    navigation.navigate("chatwithgemini" as never);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.welcomeText}>Welcome, {name}!</Text>
@@ -28,6 +32,13 @@ export default function Welcome() {
         onPress={handleGoToNotes}
       >
         <Text style={styles.buttonText}>My Notes</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.button, styles.chatButton]}
+        onPress={handleGoToChat}
+      >
+        <Text style={styles.buttonText}>Chat with AI</Text>
       </TouchableOpacity>
     </View>
   );
@@ -64,6 +75,9 @@ const styles = StyleSheet.create({
   },
   notesButton: {
     backgroundColor: "#4169e1",
+  },
+  chatButton: {
+    backgroundColor: "#ff6b35",
   },
   buttonText: {
     color: "white",
